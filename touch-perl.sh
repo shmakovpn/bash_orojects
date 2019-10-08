@@ -91,6 +91,7 @@ echo "" >> ${SCRIPT}
 echo "# vim: number ts=4 sw=4 expandtab smarttab" >> ${SCRIPT}
 
 echo "The file filled"
+chmod +x ${SCRIPT}
 echo "__END__"
 
 
