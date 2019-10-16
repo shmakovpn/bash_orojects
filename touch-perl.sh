@@ -1,5 +1,5 @@
 #!/bin/bash
-# Creates empy perl script
+# Creates empty perl script
 # Usage: touch-perl.sh script_name
 # Author: shmakovpn <shmakovpn@yandex.ru>
 # Date: 2019-10-08
@@ -65,11 +65,13 @@ echo "use warnings FATAL => 'all';" >> ${SCRIPT}
 echo "" >> ${SCRIPT}
 echo "# begin importing standard modules" >> ${SCRIPT}
 echo "use File::Basename;" >> ${SCRIPT}
+echo "use Cwd qw(abs_path);" >> ${SCRIPT}
 echo "use Data::Dumper;" >> ${SCRIPT}
 echo "# end importing standard modules" >> ${SCRIPT}
 echo "" >> ${SCRIPT}
 echo "## begin adding paths to \@INC" >> ${SCRIPT}
 echo "# use lib '/path/to/your/INC';" >> ${SCRIPT}
+echo "use lib dirname(abs_path(\$0));  # adds the full path of the directory of the script to \@INC" >> ${SCRIPT}
 echo "## end adding paths to \@INC" >> ${SCRIPT}
 echo "" >> ${SCRIPT}
 echo "## begin import user defined packages" >> ${SCRIPT}
@@ -82,6 +84,8 @@ echo "" >> ${SCRIPT}
 echo "## start config" >> ${SCRIPT}
 echo "my \$prog_id = '`uuid`';  # unique id of the program" >> ${SCRIPT}
 echo "my \$SCRIPT_NAME = basename(\$0);  # the name of the script" >> ${SCRIPT}
+echo "my \$SCRIPT_PATH = abs_path(\$0);  # the full path of the script" >> ${SCRIPT}
+echo "my \$SCRIPT_DIR = dirname(abs_path(\$0));  # the full path of the directory of the script" >> ${SCRIPT}
 echo "## end config" >> ${SCRIPT}
 echo "" >> ${SCRIPT}
 echo "## begin main" >> ${SCRIPT}
