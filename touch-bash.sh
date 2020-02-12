@@ -54,7 +54,7 @@ fi
 echo "Info: the file created"
 
 # put content to the created script file
-echo "#!/bin/bash"
+echo "#!/bin/bash" >> ${SCRIPT}
 echo "# Author: ${AUTHOR}" >> ${SCRIPT}
 echo "# Date: "`date +%Y-%m-%d` >> ${SCRIPT}
 echo "" >> ${SCRIPT}
