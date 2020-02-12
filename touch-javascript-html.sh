@@ -75,12 +75,13 @@ echo "	<div id='content'></div>" >> ${SCRIPT}
 echo "    </body>" >> ${SCRIPT}
 echo "    <script>" >> ${SCRIPT}
 echo "        let progId = '$(uuid)';" >> ${SCRIPT}
-echo "        document.getElementById('prog_id').innerHtml += progId;" >> ${SCRIPT}
-echo "        let creation_date = '$(date +%Y-%m-%d)';" >> ${SCRIPT}
+echo "        document.getElementById('prog_id').innerHTML += progId;" >> ${SCRIPT}
+echo "        let creationDate = '$(date +%Y-%m-%d)';" >> ${SCRIPT}
+echo "        document.getElementById('creation_date').innerHTML += creationDate;" >> ${SCRIPT}
 echo "    </script>" >> ${SCRIPT}
 echo "    <script>" >> ${SCRIPT}
 echo "        // todo - put your javascript code here!!" >> ${SCRIPT}
-echo "        // document.getElementById('content').innerHtml = 'Hello World';" >> ${SCRIPT}
+echo "        // document.getElementById('content').innerHTML = 'Hello World';" >> ${SCRIPT}
 echo "        // console.log('Hello World');" >> ${SCRIPT}
 echo "    </script>" >> ${SCRIPT}
 echo "    <!-- vim: number ts=4 sw=4 expandtab smarttab -->" >> ${SCRIPT}
